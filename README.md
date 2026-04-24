@@ -1,70 +1,62 @@
-# AnswerIQ 🚀
+# AnswerIQ
 
-AnswerIQ is an AI-powered automated evaluation system designed to streamline the grading process for educational institutions. By leveraging advanced OCR and Large Language Models, AnswerIQ can extract text from handwritten or digital answer sheets and provide detailed, criteria-based scoring.
+AnswerIQ is an automated evaluation system designed to assist educational institutions in grading student answer sheets. The system uses AI to extract text from documents and provides a detailed scoring breakdown based on reference answers provided by faculty.
 
-## 🌟 Features
+## Features
 
-- **AI OCR Pipeline**: High-precision text extraction from PDF answer sheets using Google Gemini.
-- **Intelligent Evaluation**: Automated scoring based on three key dimensions:
-  - **Concept Coverage**: Ensures core concepts from the reference answer are present.
-  - **Semantic Similarity**: Measures the contextual meaning using Sentence Transformers.
-  - **Keyword Matching**: Validates the presence of technical terminology.
-- **Faculty Dashboard**: Manage courses, upload reference answers, and review AI-generated scores.
-- **Student Portal**: View evaluation results and detailed feedback.
-- **Database Integration**: Robust data management powered by Supabase.
+The system includes several modules for processing and evaluating educational content:
 
-## 🛠️ Tech Stack
+- **OCR Processing**: Uses Google Gemini to extract text from PDF submissions with high accuracy.
+- **Evaluation Engine**: Uses a multi-dimensional approach to scoring answers:
+  - **Concept Coverage**: Verifies that key concepts are mentioned.
+  - **Semantic Similarity**: Uses Sentence Transformers to check the contextual meaning of the student's response.
+  - **Keyword Matching**: Checks for specific technical terms.
+- **Faculty Tools**: Provides a dashboard for managing courses, uploading answer keys, and reviewing results.
+- **Student Access**: Allows students to view their marks and understand where they lost points through detailed feedback.
+- **Database Management**: Integrated with Supabase for secure data storage and real-time updates.
 
-- **Frontend**: Next.js, TypeScript, Tailwind CSS
-- **Backend**: FastAPI (Python), Groq API (LLM), Google GenAI (Gemini)
-- **Database**: Supabase (Postgres)
-- **NLP**: Sentence Transformers (all-MiniLM-L6-v2)
+## Technical Details
 
-## 🚀 Getting Started
+- **Frontend**: Built with Next.js and TypeScript.
+- **Backend**: Python-based FastAPI server.
+- **LLM Integration**: Uses Groq and Google's Gemini Flash for language processing and OCR.
+- **NLP**: Employs the Sentence Transformers library for semantic analysis.
 
-### Prerequisites
+## Setup and Installation
 
-- Python 3.9+
-- Node.js 18+
-- Supabase Account
-- API Keys: [Groq](https://console.groq.com/), [Google AI Studio](https://aistudio.google.com/)
+### Requirements
 
-### Installation
+- Python 3.9 or higher
+- Node.js 18 or higher
+- A Supabase account and project
+- API keys for Groq and Google AI Studio
 
-1. **Clone the repository**:
+### Local Installation
+
+1. **Clone the repository**
    ```bash
    git clone https://github.com/MannAhalpara/AnswerIQ.git
    cd AnswerIQ
    ```
 
-2. **Backend Setup**:
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   ```
-   Create a `.env` file in the `backend` folder:
-   ```env
-   GROQ_API_KEY=your_groq_key
-   GEMINI_API_KEY=your_gemini_key
-   SUPABASE_URL=your_url
-   SUPABASE_KEY=your_key
-   ```
+2. **Backend Configuration**
+   - Navigate to the `backend` directory.
+   - Install dependencies: `pip install -r requirements.txt`.
+   - Create a `.env` file with your credentials (GROQ_API_KEY, GEMINI_API_KEY, SUPABASE_URL, SUPABASE_KEY).
 
-3. **Frontend Setup**:
-   ```bash
-   cd ../frontend
-   npm install
-   npm run dev
-   ```
+3. **Frontend Configuration**
+   - Navigate to the `frontend` directory.
+   - Install dependencies: `npm install`.
+   - Start the development server: `npm run dev`.
 
-## 📂 Project Structure
+## Directory Structure
 
-- `AI_OCR/`: Core logic for image extraction and Gemini-powered OCR.
-- `backend/`: FastAPI server and database services.
-- `Evaluation/`: NLP modules for scoring and similarity analysis.
-- `frontend/`: Next.js application for Admin and Faculty interfaces.
-- `supabase/`: Database configurations and functions.
+- `AI_OCR/`: Modules for image processing and OCR.
+- `backend/`: API server and database logic.
+- `Evaluation/`: Core scoring algorithms.
+- `frontend/`: User interface components and pages.
+- `supabase/`: Database schema and configuration.
 
-## 🛡️ License
+## License
 
 This project is licensed under the MIT License.
